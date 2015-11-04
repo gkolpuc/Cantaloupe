@@ -1,0 +1,9 @@
+/target
+.project
+.settings/*
+*target/*
+cantaloupe-examples/target/*
+cantaloupe-examples/.settings/*
+.classpath
+cantaloupe-core/.settings/*
+cantaloupe-core/target/*
