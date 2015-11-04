@@ -1,0 +1,35 @@
+{
+  "query": {
+    "uuid": "UUIDTEST-001",
+    "filter": [
+      {
+        "date": {
+          "type": "CUSTOM",
+          "startDate": "2015-10-21T04:00:00",
+          "endDate": "2015-10-22T03:59:59",
+          "label": "DEFAULT"
+        }
+      }
+    ]
+  },
+  "appId": "EventApp",
+  "requestId": "1445523581850-1151d640",
+  "sort": [
+    {
+      "field": "Date",
+      "order": "Asc"
+    }
+  ],
+  "fields": {
+    "option": "Exclude",
+    "fields": [
+      "StrEvntBrief",
+      "StrEvntTranscript",
+      "StrEvntBase",
+      "Event",
+      "Enrichment",
+      "Relationship",
+      "Identifier"
+    ]
+  }
+}

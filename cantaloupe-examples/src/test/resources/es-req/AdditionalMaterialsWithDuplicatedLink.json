@@ -1,0 +1,20 @@
+{
+  "query": {
+    "filtered": {
+      "query": {
+        "match": {
+          "Enrichment.AdditionalMaterials.presentationCount": "2"
+        }
+      },
+      "filter": {
+        "and": [
+          {
+            "script": {
+              "script": "_source.Enrichment.AdditionalMaterials.presentationLink[0]==_source.Enrichment.AdditionalMaterials.presentationLink[1]"
+            }
+          }
+        ]
+      }
+    }
+  }
+}

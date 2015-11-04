@@ -1,0 +1,75 @@
+{
+  "query": {
+    "uuid": "UUIDTEST-001",
+    "filter": [
+      {
+        "caMilestonePicking": false,
+        "eventTypeLevel": {
+          "levelId": [
+            "ConvAnn",
+            "FollAnn",
+            "IPOAnn",
+            "ConvFd",
+            "FollFd",
+            "IPOFd",
+            "ConvPip",
+            "FollPip",
+            "IPOPip",
+            "ConvPrc",
+            "FollPrc",
+            "IPOPrc",
+            "ConvWD",
+            "FollWD",
+            "IPOWD",
+            "LockUpEx",
+            "AgSupraPrc",
+            "AssBackPrc",
+            "EmgMrktPrc",
+            "FedCredAgPrc",
+            "HighYieldPrc",
+            "InvGrPrc",
+            "MortBackPrc",
+            "RecPip",
+            "STRPip",
+            "SPPip",
+            "MAPip",
+            "RecUpc",
+            "STRUpc",
+            "SPUpc",
+            "MAUpc",
+            "RecAnn",
+            "STRAnn",
+            "SPAnn",
+            "MAAnn",
+            "RecPrc",
+            "STRPrc",
+            "SPPrc",
+            "MAPrc",
+            "RecWD",
+            "STRWD",
+            "SPWD",
+            "MAWD"
+          ],
+          "eventTypeLevel": "ANY"
+        },
+        "organization": {
+          "permId": [
+            "4296649838",
+            "5043319166"
+          ]
+        },
+        "option": "INCLUDE"
+      },
+      {
+        "caMilestonePicking": false,
+        "organization": {
+          "permId": [
+            "4296649838"
+          ]
+        },
+        "option": "EXCLUDE"
+      }
+    ]
+  },
+  "appId": "RegressionTest"
+}

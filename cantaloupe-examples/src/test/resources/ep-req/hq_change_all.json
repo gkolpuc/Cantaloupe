@@ -1,0 +1,11 @@
+{
+  "query": {
+    "fullText": {
+      "text": "\"HQ Change:\"",
+      "isWideSearch": false,
+      "isFuzzySearch": false
+    },
+    "uuid": "UUIDTEST-001"
+  },
+  "appId": "Development"
+}

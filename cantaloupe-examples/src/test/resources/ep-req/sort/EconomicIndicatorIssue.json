@@ -1,0 +1,62 @@
+{
+  "appId": "Development",
+  "query": {
+    "filter": [
+      {
+        "date": {
+          "type": "CUSTOM",
+          "startDate": "2015-08-06T17:00:00",
+          "endDate": "2015-08-07T16:59:00"
+        },
+        "country": {
+          "option": "INCLUDE",
+          "countryIso2Code": [
+            "US"
+          ]
+        },
+        "eventTypeLevel": {
+          "eventTypeLevel": "ANY",
+          "levelId": [
+            "400010",
+            "1000499921",
+            "1000499913",
+            "1000499901",
+            "306005",
+            "1000499911",
+            "1000499909",
+            "400312",
+            "400592",
+            "400504",
+            "400100",
+            "1000499905",
+            "400064",
+            "400499",
+            "400293",
+            "400032",
+            "1000499907",
+            "306009",
+            "1000499885",
+            "400433",
+            "400113",
+            "306010"
+          ]
+        }
+      }
+    ],
+    "uuid": "PADACT-002"
+  },
+  "sort": [
+    {
+      "field": "COUNTRY_RANK",
+      "order": "desc"
+    },
+    {
+      "field": "ECONOMIC_INDICATOR_ECI_BUNDLE",
+      "order": "asc"
+    },
+    {
+      "field": "ECONOMIC_INDICATOR_RANK",
+      "order": "asc"
+    }
+  ]
+}
