@@ -1,7 +1,7 @@
 # Cantaloupe
 
 
-Cantaloupe is open-source library for testing REST services with support for JSON data manipulation and assertion.
+Cantaloupe is open-source library for testing REST services. It provides fulent API for JSON data manipulation and assertion.
 
 #### Examples
 
