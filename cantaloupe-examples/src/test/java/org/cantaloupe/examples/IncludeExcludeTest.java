@@ -11,13 +11,18 @@ import org.junit.Assert;
 import org.junit.Test;
 
 import com.mashape.unirest.http.exceptions.UnirestException;
-
+//@formatter:off
 public class IncludeExcludeTest {
 	@Test
 	public void shouldExcludeOrganization() throws UnirestException, IOException {
-		Assert.assertTrue(TestStatus.Success == Cantaloupe.json(API.search().body(Resource.epReq("OneIncludeOneExclude.json"))
-				.asJson()).getArray("events")
-				.forEach(JsonFunctions.arrayFunction("EventData.Derived.OrganizationID").notContains("4296649838"))
+		Assert.assertTrue(
+			TestStatus.Success == 
+				Cantaloupe.json(API.search()
+									.body(Resource.epReq("OneIncludeOneExclude.json"))
+									.asJson())
+				.getArray("events")
+				.forEach(JsonFunctions.arrayFunction("EventData.Derived.OrganizationID")
+						.notContains("4296649838"))
 				.status());
 	}
 

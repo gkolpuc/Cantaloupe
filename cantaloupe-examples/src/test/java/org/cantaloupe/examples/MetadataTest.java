@@ -7,12 +7,17 @@ import org.junit.Assert;
 import org.junit.Test;
 
 import com.mashape.unirest.http.exceptions.UnirestException;
-
+//@formatter:off
 public class MetadataTest {
 
 	@Test
 	public void eventTypeLookupContainsSampleId() throws UnirestException {
-		Assert.assertTrue(TestStatus.Success == Cantaloupe.json(API.get("/cache/lookup/eventtypes").asJson())
-				.getLongVal("1000351539.id").assertEquals(1000351539L).status());
+		Assert.assertTrue(
+			TestStatus.Success == 
+				Cantaloupe.json(API.get("/cache/lookup/eventtypes")
+									.asJson())
+				.getLongVal("1000351539.id")
+				.assertEquals(1000351539L)
+				.status());
 	}
 }
