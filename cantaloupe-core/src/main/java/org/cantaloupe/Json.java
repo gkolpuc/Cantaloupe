@@ -4,6 +4,7 @@ import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
 
+import org.cantaloupe.functions.CantaloupeFunction;
 import org.cantaloupe.http.HttpStatus;
 import org.cantaloupe.json.AssertEqualsValsException;
 import org.cantaloupe.json.JsonArray;
@@ -66,14 +67,38 @@ public class Json implements JsonArray, JsonObject, Response {
 		return (JsonArray) get(path);
 	}
 
+	// @Override
+	// public JsonArray forEach(Function<JSONObject, JSONObject> f) {
+	// List<JSONObject> list = asList();
+	//
+	// List<JSONObject> transform = Lists.transform(list, f);
+	// for (JSONObject jsonObject : transform) {
+	// }
+	// return this;
+	// }
+
 	@Override
-	public JsonArray forEach(Function<JSONObject, JSONObject> f) {
+	public JsonArray forEach(CantaloupeFunction<JSONObject, Boolean> f) {
 		List<JSONObject> list = asList();
 
-		List<JSONObject> transform = Lists.transform(list, f);
-		for (JSONObject jsonObject : transform) {
+		List<Boolean> transform = Lists.transform(list, f);
+		for (Boolean jsonObject : transform) {
 		}
 		return this;
+	}
+
+	@Override
+	public JsonArray atLeastOne(CantaloupeFunction<JSONObject, Boolean> f) {
+		List<JSONObject> list = asList();
+		f.noAssertions();
+		List<Boolean> transform = Lists.transform(list, f);
+		for (Boolean b : transform) {
+			if (b) {
+				return this;
+			}
+		}
+
+		throw new AtLeastOneException(f.toString());
 	}
 
 	private List<JSONObject> asList() {
@@ -97,14 +122,14 @@ public class Json implements JsonArray, JsonObject, Response {
 	}
 
 	@Override
-	public JsonArray count(Function<Integer, Boolean> equalTo) {
+	public JsonArray count(CantaloupeFunction<Integer, Boolean> equalTo) {
 		int length = array.length();
 		equalTo.apply(length);
 		return this;
 	}
 
 	@Override
-	public JsonArray forEachStringVal(Function<Object, Boolean> func) {
+	public JsonArray forEachStringVal(CantaloupeFunction<Object, Boolean> func) {
 		List<String> list = asStringList();
 
 		List<Boolean> transform = Lists.transform(list, func);

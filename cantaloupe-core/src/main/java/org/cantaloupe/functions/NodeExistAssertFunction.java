@@ -8,7 +8,7 @@ import org.json.JSONObject;
 
 import com.google.common.base.Function;
 
-public class NodeExistAssertFunction implements Function<JSONObject, JSONObject> {
+public class NodeExistAssertFunction extends CantaloupeFunction<JSONObject, Boolean> {
 
 	private String path;
 
@@ -17,10 +17,10 @@ public class NodeExistAssertFunction implements Function<JSONObject, JSONObject>
 	}
 
 	@Override
-	public JSONObject apply(JSONObject _source) {
+	public Boolean apply(JSONObject _source) {
 		Json json = PathFinder.get(_source, path);
 		assertEquals(json.isEmpty(), false);
-		return _source;
+		return true;
 	}
 
 }

@@ -1,0 +1,11 @@
+{
+  "query": {
+    "filtered": {
+      "query": {
+        "match": {
+          "EventDateLabel":"RECORD_DATE"
+        }
+      }
+    }
+  }
+}

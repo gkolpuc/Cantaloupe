@@ -16,6 +16,10 @@ public class Resource {
 	public static String esReq(String path) throws IOException {
 		return readFile("src/test/resources/es-req/" + path);
 	}
+	
+	public static String esRes(String path) throws IOException {
+		return readFile("src/test/resources/es-res/" + path);
+	}
 
 	public static String readFile(String path) throws IOException {
 		FileReader in = new FileReader(new File(path));

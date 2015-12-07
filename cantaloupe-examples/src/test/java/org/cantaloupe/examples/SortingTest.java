@@ -27,17 +27,17 @@ public class SortingTest {
 		Assert.assertTrue(
 			TestStatus.Success ==
 					Cantaloupe.call(API.search()
-							.queryString("size", "200")
-							.body(Resource.epReq("sort/DateSpecPointer_desc&Date_asc.json"))
-							.asJson())
-							.verify(HttpStatus.ok())
-							.json()
-				.getArray("events")
-				.verify(
-						sort().by("EventData.Derived.EventDateSpecifierSortPointer", Desc)
-							.by("EventData.Derived.EventDate", Asc)
-							.relyOn("EventData.extendedEventId"))
-				.status());
+										.queryString("size", "200")
+										.body(Resource.epReq("sort/DateSpecPointer_desc&Date_asc.json"))
+										.asJson())
+										.verify(HttpStatus.ok())
+										.json()
+							.getArray("events")
+							.verify(
+									sort().by("EventData.Derived.EventDateSpecifierSortPointer", Desc)
+										.by("EventData.Derived.EventDate", Asc)
+										.relyOn("EventData.extendedEventId"))
+							.status());
 
 	}
 

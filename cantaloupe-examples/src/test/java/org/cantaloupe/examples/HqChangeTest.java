@@ -12,6 +12,7 @@ import org.junit.Assert;
 import org.junit.Test;
 
 import com.mashape.unirest.http.exceptions.UnirestException;
+
 //@formatter:off
 public class HqChangeTest {
 

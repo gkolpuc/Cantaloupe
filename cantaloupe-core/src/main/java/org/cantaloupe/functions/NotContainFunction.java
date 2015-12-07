@@ -4,7 +4,7 @@ import org.junit.Assert;
 
 import com.google.common.base.Function;
 
-public class NotContainFunction implements Function<Object, Boolean> {
+public class NotContainFunction extends CantaloupeFunction<Object, Boolean> {
 
 	private final Object[] notContains;
 

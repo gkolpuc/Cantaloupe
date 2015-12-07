@@ -1,9 +1,10 @@
 package org.cantaloupe.functions;
 
 import com.google.common.base.Function;
+
 import static org.junit.Assert.assertEquals;
 
-public class IntegerEqualToFunction implements Function<Integer, Boolean> {
+public class IntegerEqualToFunction extends CantaloupeFunction<Integer, Boolean> {
 
 	private Integer i;
 

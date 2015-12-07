@@ -10,9 +10,9 @@ import org.json.JSONObject;
 
 import com.google.common.base.Function;
 
-public class ArrayFunction implements Function<JSONObject, JSONObject> {
+public class ArrayFunction extends CantaloupeFunction<JSONObject, Boolean> {
 
-	Set<Function<Object, Boolean>> functions = new HashSet<Function<Object, Boolean>>();
+	Set<CantaloupeFunction<Object, Boolean>> functions = new HashSet<CantaloupeFunction<Object, Boolean>>();
 	private final String path;
 	private String[] contains;
 
@@ -21,29 +21,29 @@ public class ArrayFunction implements Function<JSONObject, JSONObject> {
 	}
 
 	@Override
-	public JSONObject apply(JSONObject input) {
+	public Boolean apply(JSONObject input) {
 		JsonArray array = Cantaloupe.json(input).getArray(path);
-		for (Function<Object, Boolean> func : functions) {
+		for (CantaloupeFunction<Object, Boolean> func : functions) {
 			array.forEachStringVal(func);
 		}
 
 		if (contains != null) {
 			array.contains(contains);
 		}
-		return input;
+		return true;
 	}
 
-	public Function<JSONObject, JSONObject> notContains(String... notContains) {
+	public CantaloupeFunction<JSONObject, Boolean> notContains(String... notContains) {
 		functions.add(Functions.notContains(notContains));
 		return this;
 	}
 
-	public Function<JSONObject, JSONObject> contains(String... contains) {
+	public CantaloupeFunction<JSONObject, Boolean> contains(String... contains) {
 		this.contains = contains;
 		return this;
 	}
 
-	public Function<JSONObject, JSONObject> apply(Function<Object, Boolean> func) {
+	public CantaloupeFunction<JSONObject, Boolean> apply(CantaloupeFunction<Object, Boolean> func) {
 		functions.add(func);
 		return this;
 	}

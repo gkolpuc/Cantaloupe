@@ -7,7 +7,6 @@ import org.cantaloupe.Json;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
-
 public class AssertEqualsValsException extends AssertException {
 
 	private Json retrieved;
@@ -25,7 +24,8 @@ public class AssertEqualsValsException extends AssertException {
 	@Override
 	public String toString() {
 		StringBuilder b = new StringBuilder();
-		b.append("==================================");
+		b.append("AssertEqualsValsException");
+		b.append("\n==================================");
 		b.append("\n");
 		b.append("AssertEqualsValsException :");
 		b.append("\n\n\t retrieved=\n" + pretty(retrieved.jsonString()));
@@ -37,8 +37,7 @@ public class AssertEqualsValsException extends AssertException {
 	}
 
 	private String pretty(String jsonString) {
-		Gson create = new GsonBuilder()
-		.setPrettyPrinting().create();
+		Gson create = new GsonBuilder().setPrettyPrinting().create();
 		Map<String, Object> fromJson = create.fromJson(jsonString, Map.class);
 		return create.toJson(fromJson);
 	}

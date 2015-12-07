@@ -5,7 +5,10 @@ import com.mashape.unirest.request.HttpRequest;
 import com.mashape.unirest.request.HttpRequestWithBody;
 
 public class API {
-	private static String url = "http://hdcp-event-platform-api-beta.int.thomsonreuters.com:80";
+	private static String url = "http://10.51.10.45:8090";
+
+	// private static String url =
+	// "http://hdcp-event-platform-api-beta.int.thomsonreuters.com:80";
 
 	public static HttpRequestWithBody search() {
 		return Unirest.post(url + "/events").header("accept", "application/json")

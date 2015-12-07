@@ -6,13 +6,16 @@ import org.cantaloupe.Cantaloupe;
 import org.cantaloupe.examples.util.ES;
 import org.cantaloupe.json.TestStatus;
 import org.junit.Assert;
+import org.junit.Ignore;
 import org.junit.Test;
 
 import com.mashape.unirest.http.exceptions.UnirestException;
+
 //@formatter:off
 public class VoteRightTest {
 
 	@Test
+	@Ignore
 	public void shouldHaveProperEventName() throws UnirestException, IOException {
 		Assert.assertTrue(
 			TestStatus.Success == 
